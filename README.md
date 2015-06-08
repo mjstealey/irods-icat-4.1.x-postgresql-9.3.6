@@ -42,7 +42,9 @@ To overcome the ephemeral nature of docker containers this project has been stru
 
 ### Configure
 
-The first time the script is run it will build the required images to setup and run iRODS with PostgreSQL using the attributes defined in `config-files/irods-config.yaml` and `config-files/rodsuser-config.yaml`. You will want to define the attributes for your environment prior to running the script for the first time. The default settings for each of these files is shown below.
+The first time the script is run it will build the required images to setup and run iRODS with PostgreSQL using the attributes defined in `config-files/irods-config.yaml` and `config-files/rodsuser-config.yaml`. You will want to define the attributes for your environment prior to running the script for the first time. 
+
+The iRODS administrative information as well as one additional standard **rodsuser** can be defined in the config files. The default settings for each of these files is shown below.
 
 **irods-config.yaml**
 
