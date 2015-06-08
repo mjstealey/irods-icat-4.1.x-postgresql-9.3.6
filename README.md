@@ -2,7 +2,7 @@
 
 A dockerized version of iRODS v4.1.x using PostgreSQL v9.3.6 as the iCAT database.
 
-To overcome the ephemeral nature of docker containers this project has been structured to make use of a centralized data container to share and persist data volumes between the running docker containers and the host. In this way the docker containers can come into or out of existence and attach to a previously known state based on the contents of the shared volumes. In this way the iRODS iCAT and any added files will remain intact even if the running containers are stopped, removed or have their images destroyed entirely.
+To overcome the ephemeral nature of docker containers this project has been structured to make use of a centralized data container to share and persist data volumes between the running docker containers and the host. In this way the docker containers can come into or out of existence and attach to a previously known state based on the contents of the shared volumes. The iRODS iCAT database and any added data files will remain intact even if the running containers are stopped, removed or have their images destroyed entirely.
 
 ---
 
