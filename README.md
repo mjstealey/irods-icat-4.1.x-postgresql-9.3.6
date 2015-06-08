@@ -78,9 +78,27 @@ RODSUSER_IRODS_AUTH: docker-irods
 
 ### Run
 
-If run using the default configuration you would be able to verify your install by.
+Once you've configured the `irods-config.yaml` and `rodsuser-config.yaml` files you only need to run the `run-docker-irods.sh` script. The information you provided in the config files will be used to setup and run the iRODS environment.
 
-1. exec into the running irods-icat container and checking the status
+**Example**
+
+```
+$ ./run-docker-irods.sh
+*** RUN SCRIPT run-docker-irods.sh ***
+*** update github submodules ***
+...
+Starting iRODS server...
+Confirming catalog_schema_version... Success
+Validating [/var/lib/irods/.irods/irods_environment.json]... Success
+Validating [/etc/irods/server_config.json]... Success
+Validating [/etc/irods/hosts_config.json]... Success
+Validating [/etc/irods/host_access_control_config.json]... Success
+Validating [/etc/irods/database_config.json]... Success
+*** Create User: docker-irods ***
+*** FINISHED SCRIPT run-docker-irods.sh ***
+```
+
+If run using the default configuration you would be able to verify your install by using `docker exec` to get into the running **irods-icat** container and check the status using the **irods** administrative user.
 
 ```
 $ docker exec -ti irods-icat /bin/bash
@@ -102,6 +120,8 @@ demoResc
 dockerResc
 ```
 From here you could also perform any other standard iRODS iCommands or modifications to your running iRODS environment.
+
+--- 
 
 ### Other information
 
