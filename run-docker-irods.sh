@@ -88,7 +88,7 @@ fi
 
 # Setup irods environment
 CHECK_IRODS_CID=`docker ps -a | tr -s ' ' | grep ${APPSTACK_IRODS} | cut -d ' ' -f 1`
-CHECK_IRODS_DIR=`docker exec -ti hs-irods-data ls /var/lib/irods/`
+CHECK_IRODS_DIR=`docker exec -ti ${APPSTACK_DATA} ls /var/lib/irods/`
 if [[ -z "${CHECK_IRODS_CID}" ]] && [[ -z "${CHECK_IRODS_DIR}" ]]; then
     echo "*** docker run irods-icat-setup ***"
     docker run --rm --volumes-from ${APPSTACK_DATA} --link ${APPSTACK_POSTGRESQL}:${APPSTACK_POSTGRESQL} -it irods-icat-setup
